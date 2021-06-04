@@ -1,0 +1,11 @@
+{% extends 'dog/header.html' %}
+
+{% block content %}
+<div>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}</p>
+    {% else %}
+    <p>Login please!</p>
+    {% endif %}
+</div>
+{% endblock %}
