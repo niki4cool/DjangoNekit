@@ -20,6 +20,8 @@ def index(request):
         ]
     })
 
+def post_list(request):
+    return render(request, 'dog/post_list.html', {})
 
 def turtle(request):
     return render(request, 'dog/turtle.html', {})
