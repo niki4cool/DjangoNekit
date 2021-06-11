@@ -22,36 +22,78 @@ td{
 background-image: url(http://innerworkhealing.com/wp-content/uploads/2017/08/03.jpg);
 }
 
-.click-holder{
-
-margin-left: 40%;
-margin-top: 5%;
+.clickerr{
+text-align: center;
 }
 
-.text1{
-    margin-left: 41.5%;
-    font-size: 200%;
-}
-.text2{
-font-size: 200%;
-    margin-left: 47%;
-}
-.text3{
-font-size: 200%;
-    margin-left: 44%;
+.boost{
+background-image:url(http://cdn130.picsart.com/257787361041202.gif?to=min&r=1024);
+background-size: cover;
+color: white;
+text-shadow: 2px 2px 2px #0062B2;
 }
 
-.counter{
-font-size: 200%;
-    margin-left: 55%;
+.boost_auto{
+background-image:url(https://media1.tenor.com/images/4f4661c360ccbf1ddad73a0210fd84de/tenor.gif);
+background-size: cover;
+color: white;
+text-shadow: 2px 2px 2px #0062B2;
 }
 
-.click_power{
+.hello{
+text-align: center;
 font-size: 200%;
-    margin-left: 55%;
+background-image: url(https://media1.tenor.com/images/12d5fbc3bc367b57efb242f95fbead59/tenor.gif?itemid=3462357);
+background-size: cover;
+color: black;
+text-shadow: 2px 2px 2px white;
 }
 
-.auto_click_power{
+.logout_main{
+color: white;
+text-decoration: none;
+text-shadow: 2px 2px 2px black;
+}
+
+.logout{
+text-align: center;
+border-radius: 5px;
+width: 100px;
+height: 40px;
+margin-top:20px;
 font-size: 200%;
-    margin-left: 55%;
+background-image: url(https://cutewallpaper.org/21/red-gradient-background/Fresh-Background-Gradients-WebGradients.com-dY.png);
+background-size: cover;
+}
+
+.login_reg{
+color: blue;
+text-decoration: none;
+text-shadow: 2px 2px 2px white;
+}
+
+.errorlist{
+display: none;
+}
+
+.helptext{
+display: none;
+}
+
+label{
+margin-right: 10px;
+}
+
+.input_button{
+margin-top: 20px;
+}
+
+.inp{
+font-family: FRANKLIN GOTHIC MEDIUM;
+font-size: 40%;
+}
+
+input{
+font-size: 60%;
+margin-bottom:5px;
 }

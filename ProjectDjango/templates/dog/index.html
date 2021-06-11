@@ -6,32 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PugClicker (• ω •)</title>
+    <link rel="shortcut icon" href="https://lh3.ggpht.com/ANBacQ38r3kD0bPx5LOVuh_Pl4dPegNYm7hDdlcEPwIbq0mnp_oGEetnJna_O8aXcmDL" type=”image/png”>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/index.js' %}"></script>
 </head>
 <body>
 
 <table width="100%" height="100%" border="1" align="center" cellpadding="4" cellspacing="0">
+
    <tr>
     <td class="clickerr" valign="top" width="70%" rowspan="2" valign="top">
         <button class="click-holder" onclick="call_click()">
-                <img  id="click-image" src="{% static 'imgs/dog.gif' %}" alt="">
-            </button>
+            <img  id="click-image" src="{% static 'imgs/dog.gif' %}" alt="">
+        </button>
         <p class="text1">🤑 Количество кликов 🤑</p>
         <p class="counter" id="counter">{{maincycle.coins_count}}</p>
-        <p class="text2"> 🖕 Сила клика 🖕</p>
+        <p class="text2">👉 Сила клика 👈</p>
         <p class="click_power" id="click_power">{{maincycle.click_power}}</p>
         <p class="text3">🤖 Сила Автоклика 🤖</p>
         <p class="auto_click_power" id="auto_click_power">{{maincycle.auto_click_power}}</p>
     </td>
-       <td valign="top" width="20" height="50%" bgcolor="#ffcc33">
-           <div>hello, {{user.username}}</div>
-            <a href="{% url 'logout' %}">logout</a>
+       <td valign="top" width="20" height="50%">
+           <div class="hello">hello, {{user.username}}</div>
+           <div class="logout"> <a class="logout_main" href="{% url 'logout' %}">logout</a></div>
+           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
        </td>
    </tr>
+
    <tr>
     <td valign="top" height="50%">
-<div class="boost-container">
+<div class="boost-container" height="50%">
             <p>Boosts 🌌</p>
             <div class="boost-holder" id="boost-holder">
                 {% for boost in boosts %}
@@ -43,7 +47,7 @@
                         </button>
                     {% endif %}
                     {% if boost.boost_type == 1 %}
-                        <button class="boost auto" id="boost_{{boost.id}}" onclick="update_boost({{boost.id}})">
+                        <button class="boost_auto" id="boost_{{boost.id}}" onclick="update_boost({{boost.id}})">
                             <p>lvl: <span id="boost_level">{{boost.level}}</span></p>
                             <p>pow: +<span id="boost_power">{{boost.power}}</span></p>
                             <p>buy: <span id="boost_price">{{boost.price}}</span></p>

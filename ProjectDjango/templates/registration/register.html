@@ -1,19 +1,22 @@
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Register</title>
 </head>
 <body>
 <div>
-    If you have an account: <a href="{% url 'login' %}">login</a>
+    If you have an account: <a class="login_reg" href="{% url 'login' %}">login</a>
 </div>
 <div>
     <form method='POST' action="{% url 'register' %}">
         {% csrf_token %}
         {{form}}
-        <p><input type="submit"></p>
+        <p class="input_button"><input class="inp" type="submit"></p>
     </form>
     
     {% if form.errors %}
