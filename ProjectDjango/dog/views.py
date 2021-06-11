@@ -8,9 +8,12 @@ from .serializers import MainCycleSerializer, BoostSerializer
 
 # Create your views here.
 def index(request):
-    user = models.User.objects.get(id=request.user.id)
-    if user == None:
-        return redirect('login')
+    try:
+        user = models.User.objects.get(id=request.user.id)
+    except:
+        form = UserCreationForm(request.POST)
+        return render(request, 'registration/register.html', {'form': form})
+        quit()
 
     maincycle = models.MainCycle.objects.get(user=request.user)
     boosts = models.Boost.objects.filter(main_cycle=maincycle)
@@ -20,9 +23,8 @@ def index(request):
         'boosts': boosts,
     })
 
-
 def turtle(request):
-    return render(request, 'dog/turtle.html', {})
+    return render(request, 'http://127.0.0.1:8000/dog/index.html', {})
 
 def work(request):
     return render(request, 'dog/work.html', {})
@@ -70,8 +72,10 @@ def update_boost(request):
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
+
         if form.is_valid():
             user = form.save()
+
             main_cycle = models.MainCycle()
             main_cycle.user = user
             main_cycle.save()
@@ -83,5 +87,7 @@ def register(request):
         else:
             return render(request, 'registration/register.html', {'form': form})
 
+
     form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
